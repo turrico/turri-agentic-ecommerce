@@ -4,7 +4,7 @@
 
 ![Architecture Diagram](docs/architecture_diagram.png)
 
-This repository contains the source code for **Turri.AI**, a multi-agent system built with the **Google Agent Development Kit (ADK)** for the [Agent Development Kit Hackathon with Google Cloud](https://adk-hackathon.devpost.com/).
+This repository contains the source code for **Turri.AI**, a multi-agent system built with the **Google Agent Development Kit (ADK)** for the [Agent Development Kit Hackathon with Google Cloud](https://googlecloudmultiagents.devpost.com/).
 
 Our system connects to a real-world WooCommerce store to provide intelligent, personalized experiences for customers and powerful, on-demand analytics for producers.
 
