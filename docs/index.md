@@ -8,6 +8,8 @@ Turri.CR exists to connect these creators with the world. Our mission is to elev
 
 ## ❌ Shortcomings of Traditional E-Commerce
 
+![shortcommings](shortcommings.png)
+
 We began with a WordPress + WooCommerce storefront at [turri.cr](https://turri.cr), but quickly ran into friction:
 
 ### For Consumers
@@ -205,7 +207,7 @@ We are currently building a WordPress plugin to embed those frontend elements na
 
 ### Deployment Strategy
 
-The Agent + API Layer is containerized using Docker. While our prototype currently runs locally, everything is cloud-ready. In production, we plan to deploy via Google Cloud Run and use Cloud SQL, Memorystore, BigQuery, and Secret Manager. Our architecture diagram reflects these design decisions.
+The `Agent + API Layer` is containerized using Docker. While our prototype currently runs locally, everything is cloud-ready. In production, we plan to deploy via Google Cloud Run and use Cloud SQL, Memorystore, BigQuery, and Secret Manager. Our architecture diagram reflects these design decisions.
 
 ---
 
