@@ -34,7 +34,7 @@ With Google’s Agent Development Kit, we built a multi-agent system that transf
 
 Our system consists of **4 agents** (2 consumer-facing, 2 producer-facing), orchestrated around a custom **Recommendation Engine**.
 
-You can see them live in action in our Demo:
+### You can see them live in action in our Demo:
 
 [![Watch the Demo](https://img.youtube.com/vi/dZx3gqyguwc/0.jpg)](https://youtu.be/dZx3gqyguwc)
 
@@ -232,7 +232,9 @@ That said, ADK is a strong foundation — it helped us go from idea to multi-age
 
 ## 📂 Our Code
 
-[![GitHub Repo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)](https://github.com/turrico/turri-agentic-ecommerce)
+<a href="https://github.com/turrico/turri-agentic-ecommerce" target="_blank">
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Repo" width="40" height="40" style="vertical-align:middle;"/>
+</a>
 
 Explore the code on GitHub:
 [github.com/turrico/turri-agentic-ecommerce](https://github.com/turrico/turri-agentic-ecommerce)
@@ -245,8 +247,6 @@ See our system in action:
 [youtu.be/dZx3gqyguwc](https://youtu.be/dZx3gqyguwc)
 
 ## 📝 Blog Post
-
-[![Blog Post](https://img.icons8.com/ios-filled/50/000000/blog.png)](https://turri.cr/bridging-the-gap-how-agentic-ai-can-empower-costa-ricas-rural-producers-and-conscious-consumers/)
 
 Read more about our journey:
 [Bridging the Gap: How Agentic AI Can Empower Costa Rica's Rural Producers and Conscious Consumers](https://turri.cr/bridging-the-gap-how-agentic-ai-can-empower-costa-ricas-rural-producers-and-conscious-consumers/)
