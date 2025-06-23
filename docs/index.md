@@ -277,6 +277,10 @@ Our agentic e-commerce platform represents a foundational step towards a more co
 
 - **Evolving the Recommendation Engine into an ADK Agent:** A key future enhancement involves transforming our existing hybrid recommendation system into a dedicated ADK agent. Each user could then have their own persistent "conversation" with this agent. New browsing activity, shopping data, or insights from chatbot interactions would trigger new messages to this recommendation agent, allowing it to continuously refine and push highly personalized product and producer suggestions in real-time.
 
+- **Integrate more insight data — including marketing analytics from Instagram and Facebook — so producers can see what actually drives sales and engagement, and get help creating better campaigns.**
+
+- **Make Turrialba (and rural Costa Rica) a global example of authentic, community-powered e-commerce that puts people, transparency, and real impact first.**
+
 ## 📂 Our Code
 
 <a href="https://github.com/turrico/turri-agentic-ecommerce" target="_blank">
