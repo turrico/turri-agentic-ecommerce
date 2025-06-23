@@ -44,7 +44,7 @@ Our system consists of **4 agents** (2 consumer-facing, 2 producer-facing), orch
 
 ### Onboarding Agent
 
-<img src="onboarding_agent.png" alt="Conversation Agent and Sub-Agents" width="400"/>
+![Conversation Agent and Sub-Agents](onboarding_agent.png)
 
 Guides new users to build a profile through conversation.
 
@@ -63,7 +63,7 @@ Guides new users to build a profile through conversation.
 
 ### Chat Agent
 
-<img src="chat_agent.png" alt="Conversation Agent and Sub-Agents" width="400"/>
+![Conversation Agent and Sub-Agents](chat_agent.png)
 
 The main interaction point for consumers.
 
@@ -91,7 +91,7 @@ Both agents include a guardrail system that detects and blocks abuse, manipulati
 
 ### Chat Agent
 
-<img src="producer_chat_agent.png" alt="Producer Chat Agent" width="400"/>
+![Producer Chat Agent](producer_chat_agent.png)
 
 Empowers producers to analyze their business by enabling direct, conversational access to their data and insights.
 
@@ -118,7 +118,7 @@ Empowers producers to analyze their business by enabling direct, conversational 
 
 ### Report Generator
 
-<img src="report_generator_agent.png" alt="Report Generator Agent" width="400"/>
+![Report Generator Agent](report_generator_agent.png)
 
 Facilitates comprehensive business reporting, allowing producers to plan and generate custom reports via chat.
 
