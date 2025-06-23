@@ -4,7 +4,7 @@ from google.adk.sessions import DatabaseSessionService
 from google.genai import types
 
 from src.agents.producer_agent.conversation_agent import conv_and_planning_agent
-from src.agents.settings import settings
+from src.turri_data_hub.settings import database_settings
 from src.api.models import PlainText
 
 from .output_generation import output_generation
@@ -12,7 +12,7 @@ from .output_generation import output_generation
 load_dotenv()
 
 session_service = DatabaseSessionService(
-    db_url=settings.get_postgres_dsn(driver_name="psycopg2")
+    db_url=database_settings.get_postgres_dsn(driver_name="psycopg2")
 )
 
 APP_NAME = "producer_agent"

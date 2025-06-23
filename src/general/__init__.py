@@ -6,5 +6,5 @@ navy_hex = "#0434ac"
 
 colors = [peach_hex, sky_blue_hex, green_hex, navy_hex]
 
-LOGO_PATH = "general/logo.png"
-FONT_PATH = "general/dejavu-fonts-ttf-2.37/ttf/DejaVuSans.ttf"
+LOGO_PATH = "src/general/logo.png"
+FONT_PATH = "src/general/dejavu-fonts-ttf-2.37/ttf/DejaVuSans.ttf"

@@ -1,3 +1,5 @@
+"""Still experimental"""
+
 import sys
 
 sys.path.append(".")
@@ -26,6 +28,7 @@ from src.agents.producer_agent.tools import (
     get_product_website_users_counts_by_region,
     get_product_website_views,
     get_products,
+    get_customer_profiles,
 )
 from src.agents.utils import agent_log_callback, before_model_logging_callback
 
@@ -162,6 +165,7 @@ report_agent = Agent(
         get_orders_of_product,
         add_report_section,
         delete_report_section,
+        get_customer_profiles,
         spot_planning_start_generating_report,
     ],
     before_model_callback=[add_current_report_state, before_model_logging_callback],
@@ -200,9 +204,12 @@ async def main():
     print(f"Session started for producer_id: {initial_state['producer_id']}")
 
     messages = [
-        "First list all the products that I have",
-        "Now generate a report with a section for each product of the sales in 2024 and start to generate the report!",
-        # "Start to generate the report!",
+        (
+            "Write a report where you you analize the where my users are from and what is thy typical user profile of mine"
+            "More excactly I would like to have a bar plot of customers by countries. I know that you dont ahve that infortmaiton bat can you agregate it?"
+            "Make sure to specify that the regions should be countries in the plot! "
+        ),
+        "Looks great, start to generate it!",
     ]
 
     for query in messages:
@@ -239,32 +246,6 @@ async def main():
             break
         except Exception as e:
             logger.exception(f"An error occurred: {e}")
-
-    # while True:
-    #     try:
-    #         query = input(">>> You: ")
-    #         if query.lower() == "quit":
-    #             print("Exiting agent session. Goodbye!")
-    #             break
-
-    #         content = types.Content(role="user", parts=[types.Part(text=query)])
-    #         final_response = "Sorry, I could not process that."
-
-    #         async for event in runner.run_async(
-    #             user_id=user_id, session_id=session_id, new_message=content
-    #         ):
-    #             if event.is_final_response() and event.content and event.content.parts:
-    #                 # Check for code output
-
-    #                 final_response = event.content.parts[0].text
-
-    #         print(f"<<< Agent: {final_response}")
-
-    #     except (KeyboardInterrupt, EOFError):
-    #         print("\nExiting agent session. Goodbye!")
-    #         break
-    #     except Exception as e:
-    #         logger.exception(f"An error occurred: {e}")
 
 
 if __name__ == "__main__":

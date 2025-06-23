@@ -4,7 +4,7 @@ from google.adk.sessions import DatabaseSessionService
 from google.genai import types
 
 from src.agents.customer_agent.agent import GuardrailAgentWrapper
-from src.agents.settings import settings
+from src.turri_data_hub.settings import database_settings
 from src.api.models import FrontEndResponse
 
 from .converstation_agent import customer_conversation_agent
@@ -26,7 +26,7 @@ wrapped_onboarding_agent = GuardrailAgentWrapper(
 
 
 session_service = DatabaseSessionService(
-    db_url=settings.get_postgres_dsn(driver_name="psycopg2")
+    db_url=database_settings.get_postgres_dsn(driver_name="psycopg2")
 )
 
 APP_NAME = "customer_agent"

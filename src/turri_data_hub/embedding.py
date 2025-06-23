@@ -3,16 +3,16 @@ import asyncio
 from google import genai
 from google.genai import types
 
-from .settings import settings
+from .settings import database_settings
 
 EMBEDDING_DIM = 768
 
 
 async def compute_embeddings(contents: list[str]) -> list[list[float]]:
     def sync_func():
-        client = genai.Client(api_key=settings.GOOGLE_API_KEY)
+        client = genai.Client(api_key=database_settings.GOOGLE_API_KEY)
         return client.models.embed_content(
-            model=settings.embedding_model,
+            model=database_settings.embedding_model,
             contents=contents,
             config=types.EmbedContentConfig(
                 task_type="SEMANTIC_SIMILARITY", output_dimensionality=EMBEDDING_DIM

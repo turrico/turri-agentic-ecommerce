@@ -8,7 +8,7 @@ import src.turri_data_hub.chatbot.models  # noqa: F401
 import src.turri_data_hub.google_analytics.models  # noqa: F401
 import src.turri_data_hub.recommendation_system.models  # noqa: F401
 import src.turri_data_hub.woocommerce.models  # noqa: F401
-from src.turri_data_hub.settings import settings
+from src.turri_data_hub.settings import database_settings
 
 
 class TurriDB:
@@ -18,7 +18,7 @@ class TurriDB:
 
     def __init__(self):
         self.engine = create_async_engine(
-            settings.get_postgres_dsn(driver_name="asyncpg")
+            database_settings.get_postgres_dsn(driver_name="asyncpg")
         )
 
         self.session_maker = async_sessionmaker(self.engine, expire_on_commit=False)

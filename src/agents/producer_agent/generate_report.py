@@ -11,6 +11,7 @@ from src.agents.producer_agent.tools import (
     get_product_website_users_counts_by_region,
     get_product_website_views,
     get_products,
+    get_customer_profiles,
 )
 from src.agents.utils import (
     gemini_only_text,
@@ -62,6 +63,10 @@ async def create_section(
             partial(get_producer_webiste_views, tool_context=dummy_tool_context),
             partial(
                 get_producer_website_users_counts_by_region,
+                tool_context=dummy_tool_context,
+            ),
+            partial(
+                get_customer_profiles,
                 tool_context=dummy_tool_context,
             ),
             get_product_website_users_counts_by_region,

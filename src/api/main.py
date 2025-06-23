@@ -10,6 +10,8 @@ from src.api.endpoints.producer import producer_router
 from src.api.rate_limiter import RateLimiter
 from src.api.settings import settings
 from src.turri_data_hub.db import TurriDB
+from dotenv import load_dotenv
+import os
 
 
 @asynccontextmanager
@@ -18,11 +20,12 @@ async def lifespan(app: FastAPI):
     Context manager for application startup and shutdown events.
     Initializes database, rate limiter, and observability tools.
     """
-    logger.info("Application startup: Initializing resources...")
+    assert load_dotenv(".env", override=False)
 
+    logger.info("Application startup: Initializing resources...")
     app.state.rate_limiter = RateLimiter(
         redis_host=settings.REDIS_HOST,
-        redis_port=settings.REDIS_PORT,
+        redis_port=6378,
         per_day=settings.MESSAGES_PER_DAY,
         per_minute=settings.MESSAGES_PER_MINUTE,
     )

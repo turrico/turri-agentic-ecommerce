@@ -45,4 +45,4 @@ class DataBaseSettings(BaseSettings):
 # Environment: 'local' or 'cloud'
 ENVIRONMENT = os.getenv("ENVIRONMENT", "local")
 
-settings = DataBaseSettings()
+database_settings = DataBaseSettings()
