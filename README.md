@@ -8,7 +8,7 @@ This repository contains the source code for **Turri.AI**, a multi-agent system 
 
 Our system connects to a real-world WooCommerce store to provide intelligent, personalized experiences for customers and powerful, on-demand analytics for producers.
 
-> **[➡️ Read our full Devpost Submission for a detailed project overview.](YOUR_DEVPOST_SUBMISSION_LINK_HERE)**
+> **[➡️ Read our full Submission for a detailed project overview.](https://turrico.github.io/turri-agentic-ecommerce/)**
 
 ---
 
