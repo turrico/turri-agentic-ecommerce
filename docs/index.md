@@ -44,53 +44,86 @@ Our system consists of **4 agents** (2 consumer-facing, 2 producer-facing), orch
 
 ### Onboarding Agent
 
-Starts a light conversation to build the user profile:
+<img src="onboarding_agent.png" alt="Conversation Agent and Sub-Agents" width="400"/>
 
-- Learns preferences
+Guides new users to build a profile through conversation.
+
+- Captures preferences, dietary habits, and example products.
 - Shows example producers/products
-- Captures taste for use in recommendations
+
+**Sub-agents:**
+
+- **Profiling:**  
+  Is in charge of creating the profile, asking the missing question
+  and deciding when to stop, ie.e. we have sufficient information.
+- **Data Retrieval:**  
+  Fetches product/producer data
 
 > Agent responses come with frontend components like quick-reply buttons, rich cards with product images, and links to our WooCommerce listings.
 
 ### Chat Agent
 
-- Recommends producers/products using our profile-based engine.
-- Uses RAG to answer:  
-  _"Who is the producer?"_  
-  _"How is this product made?"_
-- Can access order history:  
-  _"What cheese did I buy last month?"_
-- **Profile Transparency**:  
-  Users can ask why they’re seeing something, or update their preferences live:
+<img src="chat_agent.png" alt="Conversation Agent and Sub-Agents" width="400"/>
+
+The main interaction point for consumers.
+
+- Gives recommendations based on user profile.
+- Answers questions like “Who made this?”, “What’s this product’s story?” "Do you have organic fruity coffe?"
+
+- Can pull order history (“What cheese did I buy last month?”)
+- Users can ask _why_ they see something or update their profile live.
   > “I liked that — show me more like it.”
 
-### Upcoming Features
+**Sub-agents:**
 
-- Add/change/cancel orders
-- Cart management via chat
+- **User Profile:**  
+  Fetches and updates user profile (with `get_user_profile`, `update_user_profile`), retrieves personalized recommendations (`get_personalized_product_recommendations_for_user`, `get_personalized_producer_recommendations_for_user`), and order history (`get_active_or_last_orders`).
+- **Data Retrieval:**  
+  Interfaces with WooCommerce data using:
+  - `rag_fetch_products` (query-matched products)
+  - `rag_fetch_producers` (matched producers)
+  - `get_products_of_producer` (list all products for a producer)
 
-### Guardrail
-
-While not shown in the demo, our consumer agents include a guardrail that detects abusive language or manipulation attempts.
+**Guardrail:**  
+Both agents include a guardrail system that detects and blocks abuse, manipulation, and off-topic noise.
 
 ## 📈 Producer Experience
 
 ### Chat Agent
 
-A data analyst in your pocket:
+<img src="producer_chat_agent.png" alt="Producer Chat Agent" width="400"/>
 
-- Ask for trends, insights, or reports:  
+Empowers producers to analyze their business by enabling direct, conversational access to their data and insights.
+
+- Ask for trends, insights, or reports:
   _"How did Product A perform over the last 3 months?"_
-- Understand your customers:  
+- Understand your customers:
   _"What’s the typical user profile for my products?"_
+
+**Sub-agents:**
+
+- **Data Gathering:**
+  Collects business data for the producer. It uses tools to fetch:
+
+  - `get_products` (all products by the producer)
+  - `get_orders_of_product` (sales data for a specific product)
+  - `get_producer_webiste_views` (overall producer page views)
+  - `get_product_website_views` (individual product page views)
+  - `get_producer_website_users_counts_by_region` (user location data for producer pages)
+  - `get_product_website_users_counts_by_region` (user location data for product pages)
+  - `get_customer_profiles` (profiles of customers who bought from the producer)
+
+- **Stats Agent:**
+  Performs data analysis via code exectuion.
 
 ### Report Generator
 
-- Producers can plan reports via chat
-- Agent triggers automatic report generation with gemini:
-  - Clean plots
-  - Summary insights
-  - Delivered as PDF
+<img src="report_generator_agent.png" alt="Report Generator Agent" width="400"/>
+
+Facilitates comprehensive business reporting, allowing producers to plan and generate custom reports via chat.
+
+- Producers can plan reports via chat, adding and deleting sections (`add_report_section`, `delete_report_section`).
+- Agent triggers automatic report generation with Gemini, resulting in a Report PDF with multiple sections, each with texts and plots.
 
 As we did not have time in our demo to showcase it, here is a real sample conversation:
 
