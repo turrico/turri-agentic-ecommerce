@@ -247,21 +247,35 @@ The `Agent + API Layer` is containerized using Docker. While our prototype curre
 
 ## 🔍 Findings & Learnings
 
-The Agent Development Kit makes it easy to get a functional multi-agent chatbot system running quickly. The interface for defining tools and connecting them to natural language is smooth and fast for prototyping.
+Having previously developed chatbots with explicitly defined states and conversational graphs, I was genuinely impressed by the capabilities of the Agent Development Kit (ADK). Given the right set of tools, the ADK truly enables the creation of a great chatbot experience in just minutes and a few lines of code, all without the need to manually define a complex chatbot graph – which is exceptionally impressive.
 
-However, we found that **structured output and tool use cannot be combined in a single agent** — you must choose between one or the other. Since we rely on structured responses for rendering frontend components (cards, buttons, images), this limitation was restrictive.
+However, a few areas emerged where I felt improvements could be made. Primarily, the inability for an agent to simultaneously leverage sub-agents or tools and generate structured output felt suboptimal. This led us to incorporate a separate Gemini call at the end of our workflow specifically to reliably generate our desired output components.
 
-We solved it by using a Gemini model separately for formatting output. But this creates friction in flows where we’d like an agent to call tools _and_ return structured UI output directly. Some of this may be skill-related, but we feel this area could be better supported by the framework.
+A minor point of friction was that ADK agents currently cannot have multiple parent-agents directly; however, this can be easily mitigated by wrapping them in factory functions.
 
-We’d also like **more control over agent memory and orchestration**. It would be useful to:
+In more complex workflow scenarios, such as generating a report for our producers via the Report Agent, I found it challenging to make the ADK work as seamlessly as desired. Given our limited time, I ultimately reverted to a more direct Gemini-based workflow for that specific functionality.
 
-- Explicitly control the message history (e.g., prune it, keep only facts, etc.)
-- Define tighter loops or deterministic flows, like we do manually in our recommendation engine
-- Inject structured external context into agents without relying on natural language alone
+It would be highly beneficial if ADK could support agents in a more deterministic and controlled, less chat-centric manner. This would allow for capabilities like:
 
-Right now, for tasks like report generation or profile updates, we often fallback to using Gemini directly with our own logic, rather than relying fully on ADK agents. It works, but it lives in a blurry space between chat and orchestration.
+- Easily looping over data.
+- More granular control over and dynamic updates to system prompts and message history, for instance, tailoring them precisely for each report section.
+- Explicitly controlling the message history (e.g., pruning it, retaining only factual information).
 
-That said, ADK is a strong foundation — it helped us go from idea to multi-agent system rapidly. With more control over memory, tools _and_ structured outputs in one agent, and more orchestration primitives, it could become our primary runtime for all agentic tasks.
+- Defining tighter loops or deterministic flows, similar to the manual orchestration we currently employ in our recommendation engine.
+
+It's challenging to fully articulate, but there appears to be a spectrum between pure agentic behavior and deterministic control. While the ADK excels in the former, I encountered difficulties when needing more precise control. Enhancements in these areas would allow ADK to become our primary runtime for an even broader range of agentic tasks.
+
+## Vision
+
+Our agentic e-commerce platform represents a foundational step towards a more connected marketplace. Looking ahead, our vision for Turri.CR includes expanding the system's capabilities through additional specialized agents and leveraging advanced AI tools:
+
+- **Introducing Admin Agents:** We envision a suite of dedicated Admin Agents to automate critical backend processes. These agents will be responsible for:
+
+  - **Data Freshness & Maintenance:** Continuously updating and ensuring the integrity of our database.
+  - **Comprehensive Business Reporting:** Generating in-depth reports beyond the current conversational capabilities, offering richer analytical insights.
+    For these administrative tasks, we are keen to explore less rigidly defined tool spaces, such as those offered by `AI Toolbox for Databases`. While we opted for clear, controlled, and streamlined tool use in our consumer and producer-facing agents for immediate stability, an `AI Toolbox` could offer powerful, flexible querying for internal operations.
+
+- **Evolving the Recommendation Engine into an ADK Agent:** A key future enhancement involves transforming our existing hybrid recommendation system into a dedicated ADK agent. Each user could then have their own persistent "conversation" with this agent. New browsing activity, shopping data, or insights from chatbot interactions would trigger new messages to this recommendation agent, allowing it to continuously refine and push highly personalized product and producer suggestions in real-time.
 
 ## 📂 Our Code
 
