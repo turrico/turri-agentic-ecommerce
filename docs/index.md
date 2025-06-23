@@ -35,6 +35,7 @@ With Google’s Agent Development Kit, we built a multi-agent system that transf
 Our system consists of **4 agents** (2 consumer-facing, 2 producer-facing), orchestrated around a custom **Recommendation Engine**.
 
 You can see them live in action in our Demo:
+
 [![Watch the Demo](https://img.youtube.com/vi/dZx3gqyguwc/0.jpg)](https://youtu.be/dZx3gqyguwc)
 
 ---
@@ -228,3 +229,24 @@ We’d also like **more control over agent memory and orchestration**. It would 
 Right now, for tasks like report generation or profile updates, we often fallback to using Gemini directly with our own logic, rather than relying fully on ADK agents. It works, but it lives in a blurry space between chat and orchestration.
 
 That said, ADK is a strong foundation — it helped us go from idea to multi-agent system rapidly. With more control over memory, tools _and_ structured outputs in one agent, and more orchestration primitives, it could become our primary runtime for all agentic tasks.
+
+## 📂 Our Code
+
+[![GitHub Repo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)](https://github.com/turrico/turri-agentic-ecommerce)
+
+Explore the code on GitHub:
+[github.com/turrico/turri-agentic-ecommerce](https://github.com/turrico/turri-agentic-ecommerce)
+
+## 🎬 Demo Video
+
+[![Watch the Demo on YouTube](https://img.youtube.com/vi/dZx3gqyguwc/0.jpg)](https://youtu.be/dZx3gqyguwc)
+
+See our system in action:
+[youtu.be/dZx3gqyguwc](https://youtu.be/dZx3gqyguwc)
+
+## 📝 Blog Post
+
+[![Blog Post](https://img.icons8.com/ios-filled/50/000000/blog.png)](https://turri.cr/bridging-the-gap-how-agentic-ai-can-empower-costa-ricas-rural-producers-and-conscious-consumers/)
+
+Read more about our journey:
+[Bridging the Gap: How Agentic AI Can Empower Costa Rica's Rural Producers and Conscious Consumers](https://turri.cr/bridging-the-gap-how-agentic-ai-can-empower-costa-ricas-rural-producers-and-conscious-consumers/)
