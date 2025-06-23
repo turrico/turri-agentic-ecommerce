@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Producer Insights Chat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="chat-container">
+    <img src="logo.png" alt="Company Logo" style="display:block;margin:32px auto 16px auto;max-width:120px;">
+    <h1>Producer Insights</h1>
+    <div class="wpchatbot-messages"></div>
+    <form class="wpchatbot-form" data-endpoint="http://localhost:8888/producer/chat" data-user-id=559
+      data-initial-message="Welcome! To get started, what kind of producer insights are you most interested in?">
+      <textarea class="wpchatbot-input" placeholder="Type your message..."></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <script src="chat.js"></script>
+</body>
+
+</html>

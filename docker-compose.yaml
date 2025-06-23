@@ -1,0 +1,53 @@
+services:
+  redis:
+    image: redis:7
+    container_name: redis-chat
+    ports:
+      - "6378:6379"
+    volumes:
+      - ./redis-data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+
+
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: db-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+
+  api:
+    build: .
+    ports:
+      - "${API_PORT}:8000"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      GOOGLE_APPLICATION_CREDENTIALS: "/root/turri-mono-repo/mono-repo-server-key.json"
+    volumes:
+    # development mode
+    - ./agents:/app/agents
+    - ./general:/app/general
+    - ./turri_data_hub:/app/turri_data_hub
+    - ./api:/app/api
+    - ./mono-repo-server-key.json:/root/turri-mono-repo/mono-repo-server-key.json:ro
+
+ 
+    depends_on: 
+      - postgres
+      - redis
+
+    
+
+volumes:
+  postgres-data:
+  redis-data:

@@ -1,0 +1,261 @@
+- user: "¿Qué tienen de dulcito?"
+  answer:
+    - type: text
+      text: "Tenemos varias cositas ricas para alegrarle el día, todas de gente de aquí de Turri:"
+    - type: product
+      id: 577
+      text: "Una barrita de chocolate al 70% con un toquecito de naranja, ¡riquísima!"
+    - type: product
+      id: 1158
+      text: "Piñita deshidratada con chocolate semiamargo por encima, ¡perfecta para picar!"
+    - type: producer
+      id: 1781
+      text: "Nortico Cacao Farm son unos cargas haciendo chocolates 'de la finca a la barra', ¡calidad pura!"
+    - type: option
+      text: "¿Le interesa algún dulce en específico?"
+      options:
+        - text: "Más chocolates"
+          next_user_query: "Enséñeme más chocolates"
+        - text: "Frutas con chocolate"
+          next_user_query: "Tiene más frutas con chocolatico"
+
+- user: "Do you have any local honey?"
+  answer:
+    - type: text
+      text: "Yes, of course! We have delicious honey from a local producer."
+    - type: product
+      id: 2001
+      text: "It's 100% pure and artisanally harvested here in the Turrialba mountains."
+    - type: text
+      text: "It's perfect for sweetening your drinks or enjoying with toast."
+
+- user: "Who makes good cheese in Turrialba?"
+  answer:
+    - type: text
+      text: "In Turrialba, we have several excellent cheese producers. Here's one:"
+    - type: producer
+      id: 1001
+      text: "They are known for following traditional recipes and using fresh local milk."
+    - type: option
+      text: "Would you like to know about other producers or specific types of cheese?"
+      options:
+        - text: "Other producers"
+          next_user_query: "Show me more cheese producers"
+        - text: "Types of cheese"
+          next_user_query: "What types of cheese do you have?"
+
+- user: "I'm looking for coffee."
+  answer:
+    - type: text
+      text: "Excellent! Turrialba coffee is famous. To recommend the best one for you, what kind of roast do you prefer?"
+    - type: option
+      text: "Choose a roast option:"
+      options:
+        - text: "Light"
+          next_user_query: "Show me light roast coffees"
+        - text: "Medium"
+          next_user_query: "Show me medium roast coffees"
+        - text: "Dark"
+          next_user_query: "Show me dark roast coffees"
+
+- user: "Ocupo unos regalitos de aquí de Turri."
+  answer:
+    - type: text
+      text: "¡Qué buena idea! Tenemos varias cositas perfectas para un regalito que son bien de Turri:"
+    - type: product
+      id: 1798
+      text: "Este paquetico de chocolates oscuros de Nortico Cacao Farm es un detallazo, elegante y sabroso."
+    - type: product
+      id: 644
+      text: "Un cafecito de especialidad como el 'Esperanza' de Aquiares Coffee State siempre cae bien."
+    - type: product
+      id: 1157
+      text: "O tal vez un aceitico de oliva con aromas de Casa Gen, para los que les gusta cocinar gourmet."
+    - type: option
+      text: "¿Para quién sería el regalito o qué tipo de producto le llama más la atención?"
+      options:
+        - text: "Algo dulce"
+          next_user_query: "Enséñeme más regalitos dulces"
+        - text: "Algo pa' cocinar"
+          next_user_query: "Enséñeme regalos para la cocina"
+
+- user: "¿Qué cositas saludables me recomienda?"
+  answer:
+    - type: text
+      text: "¡Claro! Tenemos opciones buenísimas y saludables de gente de aquí."
+    - type: product
+      id: 775
+      text: "La Kombucha de Mucha Bucha, como la de Limón y Jengibre, es super refrescante y tiene probióticos que ayudan."
+    - type: product
+      id: 585
+      text: "Los Nibs de Cacao de Báwö Chocolates son un superalimento, ¡ideales para batidos o granola!"
+    - type: producer
+      id: 2037
+      text: "Las Nubes Finca Orgánica tiene huevitos de pastoreo y verduritas frescas, todo pensando en estar bien."
+    - type: text
+      text: "Comer sano y apoyar a los de aquí, ¡qué más se puede pedir!"
+
+- user: "Tell me about your 'Volcán' cheese."
+  answer:
+    - type: text
+      text: "The Volcán Cheese is one of our gourmet specialties."
+    - type: product
+      id: 1761
+      text: "It has a robust texture and a pleasant spicy touch. It's from Le Chaudron."
+    - type: text
+      text: "If you like cheeses with character, you might also be interested in:"
+    - type: product
+      id: 2002
+      text: "This other aged cheese has smoky notes."
+    - type: product
+      id: 2003
+      text: "And this one has fine herbs, very aromatic!"
+
+- user: "Mae, he oído del Queso Turrialba. ¿Qué tal es?"
+  answer:
+    - type: text
+      text: "¡El Queso Turrialba es una joya de aquí! Es un quesito fresco, suavecito y cremoso."
+    - type: text
+      text: "Muchos de nuestros quesos Turrialba tienen Denominación de Origen, eso le asegura que es el mero mero y de calidad."
+    - type: producer
+      id: 247
+      text: "Del Guayabal es un productor que le pone bonito a esa tradición, ofreciendo el Queso Turrialba Certificado original."
+    - type: product
+      id: 276
+      text: "Este es el quesito certificado de ellos, perfecto para el desayuno o cuando le provoque."
+    - type: text
+      text: "Queda mortal con gallo pinto, tortillas o así solito."
+
+- user: "What's special about Turrialba products?"
+  answer:
+    - type: text
+      text: "So many things! Turrialba products stand out for their freshness and the dedication of local producers."
+    - type: text
+      text: "For example, our famous Turrialba Cheese has a Denomination of Origin."
+    - type: producer
+      id: 1002
+      text: "This producer focuses on organic coffee grown in harmony with nature."
+    - type: product
+      id: 2004
+      text: "And these artisanal sauces use fresh ingredients from local farms."
+    - type: text
+      text: "It's a combination of tradition, quality, and love for the land."
+
+- user: "Do you sell artisanal Turrialba bread?"
+  answer:
+    - type: text
+      text: "At the moment, we don't carry artisanal bread directly in our Turri.CR online shop."
+    - type: text
+      text: "We primarily focus on products like cheeses, coffees, chocolates, and preserves from local Turrialba producers."
+    - type: option
+      text: "Might you be interested in any of those products?"
+      options:
+        - text: "See cheeses"
+          next_user_query: "Show me Turrialba cheeses"
+        - text: "See coffees"
+          next_user_query: "Show me Turrialba coffees"
+
+- user: "¿Qué hace la gente de Finca Xoloitzcuintle?"
+  answer:
+    - type: text
+      text: "¡Ah, Finca Xoloitzcuintle! Ellos son unos cargas haciendo salsitas mexicanas, ¡pero con el saborcito de Turri!"
+    - type: producer
+      id: 93
+      text: "Siembran un montón de sus ingredientes sin químicos en las faldas del volcán."
+    - type: text
+      text: "Algunas de las salsas que más gustan son:"
+    - type: product
+      id: 292
+      text: "La Salsa Macha, que es una mezcla de chiles secos y semillitas, ¡sirve para todo!"
+    - type: product
+      id: 904
+      text: "La Salsa Habanero con Mango, ¡esa combinación de picantico y dulce es lo máximo!"
+
+- user: "Are there organic options?"
+  answer:
+    - type: text
+      text: "Yes, of course! We have several organic products from Turrialba. For example:"
+    - type: producer
+      id: 3045
+      text: "Makala Finca Orgánica offers dehydrated fruits and vinegars, all grown on their farm with regenerative practices."
+    - type: product
+      id: 256
+      text: "This coffee from Grupo Naturalba is certified organic, with smooth and delicious notes."
+    - type: text
+      text: "We are proud to support producers who care for the environment."
+
+- user: "¿Cuál es el producto estrella de ustedes?"
+  answer:
+    - type: text
+      text: "¡Ay, qué pregunta más difícil! Todos nuestros productos de Turri son especiales y hechos con mucho cariño."
+    - type: text
+      text: "Depende mucho de lo que le guste. Por ejemplo:"
+    - type: product
+      id: 276
+      text: "Si le cuadra el quesito tradicional, el Queso Turrialba Certificado le va a encantar a la gente."
+    - type: product
+      id: 604
+      text: "Para los que aman el cafecito, nuestro Café Centroamericano de Aquiares tiene unos sabores complejos y riquísimos."
+    - type: option
+      text: "¿Hay algún tipo de producto que le llame la atención en especial?"
+      options:
+        - text: "Quesos"
+          next_user_query: "Cuénteme de los quesos"
+        - text: "Cafés"
+          next_user_query: "Cuénteme de los cafés"
+        - text: "Chocolates"
+          next_user_query: "Cuénteme de los chocolates"
+
+- user: "Hábleme de Makala y lo que hacen."
+  answer:
+    - type: text
+      text: "¡Con todo gusto! Makala Finca Orgánica es un emprendimiento familiar con una historia bien linda."
+    - type: producer
+      id: 3045
+      text: "Ellos le ponen al cultivo orgánico y que ayuda a la tierra, convierten su amor por la naturaleza en productos que valen la pena."
+    - type: text
+      text: "Algunas de las cositas que más destacan son:"
+    - type: product
+      id: 2005
+      text: "Unas laminitas de fruta deshidratada, como las de maracuyá o guayaba, ¡saben riquísimo y natural!"
+    - type: product
+      id: 2006
+      text: "También se mandan con cosas nuevas como vinagre y sirope de uchuva."
+
+- user: "¿Cuáles son mis pedidos?"
+  answer:
+    - type: text
+      text: "Claro, aquí están sus pedidos:"
+    - type: order
+      id: 1234
+      text: "Pedido #1234 - Entregado el 10 de junio"
+    - type: order
+      id: 1235
+      text: "Pedido #1235 - En camino, llega mañana"
+
+- user: "¿Tengo algún pedido pendiente?"
+  answer:
+    - type: text
+      text: "Sí, tiene un pedido pendiente:"
+    - type: order
+      id: 1240
+      text: "Pedido #1240 - Procesando, será enviado pronto"
+
+- user: "Show me my recent orders."
+  answer:
+    - type: text
+      text: "Sure, here are your recent orders:"
+    - type: order
+      id: 5678
+      text: "Order #5678 - Delivered on June 10th"
+    - type: order
+      id: 5679
+      text: "Order #5679 - Out for delivery, arriving tomorrow"
+
+- user: "Do I have any open orders?"
+  answer:
+    - type: text
+      text: "Yes, you have one open order:"
+    - type: order
+      id: 5680
+      text: "Order #5680 - Processing, will be shipped soon"

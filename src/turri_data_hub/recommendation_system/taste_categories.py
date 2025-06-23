@@ -1,0 +1,15 @@
+TASTE_KEYS = (
+    "Gourmet",
+    "Orgánico",
+    "Saludable",
+    "Sin",
+    "Sostenible",
+    "Tradicional",
+    "Café",
+    "Bebidas",
+    "Dulces",
+    "Lácteos",
+    "Huevos",
+    "Queso Turrialba",
+    "Salsas",
+)
